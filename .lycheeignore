@@ -3,3 +3,5 @@ javascript:.*
 https://www.linkedin.com*
 .*@.*example.com
 (ht|f)tps?://.*\.?example\.(com|org).*
+https://www.iec.ch*
+https://eng.sdfe.dk*
