@@ -6,4 +6,6 @@ artifacts
 dist
 .DS_Store
 Gemfile.lock
-
+CLAUDE.md
+.vscode
+.lycheecache
