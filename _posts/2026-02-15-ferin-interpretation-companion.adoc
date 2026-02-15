@@ -1,0 +1,96 @@
+---
+layout: post
+title: "FERIN Interpretation Companion launched alongside ISO 19135:2026"
+date: 2026-02-15
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation announces the FERIN Interpretation Companion website,
+  providing practical guidance for implementing ISO 19135:2026's Framework for
+  Extensible Registration of Information.
+---
+= FERIN Interpretation Companion launched alongside ISO 19135:2026
+
+We are pleased to announce the launch of the https://www.ferin.org[FERIN
+Interpretation Companion], a comprehensive resource for practitioners working
+with item registration and information management.
+
+== What is FERIN?
+
+**FERIN** (Framework for Extensible Registration of Information) provides a
+standardized approach for managing collections of information—code lists,
+taxonomies, specifications, and reference data—that must remain accessible and
+usable over time.
+
+The framework addresses fundamental challenges that organizations face:
+
+* **Persistent identification**: References that don't break when content changes
+* **Controlled evolution**: Defined governance processes for managing change
+* **Complete audit trails**: Full history and traceability of all modifications
+* **Technology neutrality**: No implementation-specific requirements
+* **Domain agnostic**: Applicable to any domain, not just geographic information
+
+The FERIN name was coined by Ronald Tse and Reese Plews, and the trademark is
+held by the Enosema Foundation.
+
+== Relationship to ISO 19135:2026
+
+ISO 19135:2026, published on 2026-02-05, is the third edition of the international
+standard for item registration. Developed by https://committee.iso.org/home/tc211[ISO/TC 211]
+(Geographic Information/Geomatics), this edition represents a significant
+evolution from its 2015 predecessor:
+
+[cols="1,1"]
+|===
+| 2015 Edition | 2026 Edition
+
+| Focus on geographic information
+| Domain-agnostic framework
+
+| Procedural requirements
+| Conceptual framework with principles
+
+| Hierarchical conformance (Core/Extended/Hierarchical)
+| Capability-based conformance (5 classes)
+
+| Implementation included (XML)
+| Technology-neutral
+|===
+
+The standard was developed under the project leadership of Ronald Tse
+(CalConnect/Ribose) and Reese Plews (JISC Japan/Plews Consulting).
+
+The full standard is available at https://www.iso.org/standard/87753.html[ISO 19135:2026].
+
+== The FERIN Interpretation Companion
+
+While ISO 19135:2026 specifies *what* must be done, the
+https://www.ferin.org[FERIN Interpretation Companion] provides the *how* and
+*why*—practical guidance, decision frameworks, and implementation patterns that
+complement the standard.
+
+The companion covers:
+
+* **Core concepts**: The distinction between concept plane and content plane,
+granularity, and the six core principles
+* **Building registers**: Identifier design, versioning strategies, action
+references, and migration from legacy systems
+* **Reference materials**: Complete glossary, conceptual model diagrams, status
+and relations references, and anti-patterns to avoid
+
+Whether you are evaluating FERIN for your organization, building a new register,
+or migrating from an existing system, the FERIN Interpretation Companion
+provides the practical knowledge needed for successful implementation.
+
+== Visit FERIN
+
+We invite all practitioners working with terminology, concept management, and
+information registries to explore the FERIN Interpretation Companion at
+https://www.ferin.org[www.ferin.org].
