@@ -37,8 +37,8 @@ The framework addresses fundamental challenges that organizations face:
 * **Technology neutrality**: No implementation-specific requirements
 * **Domain agnostic**: Applicable to any domain, not just geographic information
 
-The FERIN name was coined by Ronald Tse and Reese Plews, and the trademark is
-held by the Enosema Foundation.
+The FERIN name was coined by Ronald Tse and Reese Plews, with usage rights
+granted to the Enosema Foundation.
 
 == Relationship to ISO 19135:2026
 
