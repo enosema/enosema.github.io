@@ -11,9 +11,15 @@ const initial = person.name.charAt(0)
 
 <div class="relative rounded-xl border border-gray-200/80 dark:border-gray-700/60 bg-white dark:bg-pine-light transition-all duration-200 hover:border-eno-green/30 dark:hover:border-eno-green/30 hover:-translate-y-0.5 hover:shadow-lg p-6 h-full flex flex-col">
   <div class="mb-4">
-    <div class="w-14 h-14 rounded-full bg-eno-green/8 dark:bg-eno-green/10 flex items-center justify-center">
-      <span class="font-serif font-bold text-xl text-eno-green dark:text-eno-green-light">{initial}</span>
-    </div>
+    {
+      person.photo ? (
+        <img src={person.photo} alt={person.name} width="56" height="56" class="w-14 h-14 rounded-full object-cover" />
+      ) : (
+        <div class="w-14 h-14 rounded-full bg-eno-green/8 dark:bg-eno-green/10 flex items-center justify-center">
+          <span class="font-serif font-bold text-xl text-eno-green dark:text-eno-green-light">{initial}</span>
+        </div>
+      )
+    }
   </div>
   <h3 class="font-serif font-bold text-lg text-gray-900 dark:text-white">{person.name}</h3>
   <p class="font-mono text-xs text-eno-green dark:text-eno-green-light tracking-wide mt-1">{person.role}</p>
