@@ -7,7 +7,7 @@ const asciiDoc = asciidoctor()
 
 const CONTENT_DIR = resolve(import.meta.dirname, '..', 'content')
 const OUTPUT_DIR = resolve(import.meta.dirname, '..', 'src', 'content')
-const SECTIONS = ['pages', 'posts']
+const SECTIONS = ['pages', 'posts', 'people']
 
 export interface TocEntry {
   id: string

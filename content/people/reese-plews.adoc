@@ -1,0 +1,24 @@
+---
+title: Reese Plews
+---
+
+== Terminology maintenance for geographic information
+
+Reese Plews is a long-standing leader in the management and maintenance of
+standardized terminology, best known as Convenor of the Terminology Maintenance
+Group (TMG) of ISO/TC 211, Geographic information/Geomatics.
+
+== Contributions to standards
+
+* Convenor of the ISO/TC 211 Terminology Maintenance Group (TMG), overseeing the
+  committee's terminology work including its Multi-Lingual Glossary of Terms, and
+  providing editorial guidance to the committee's project leaders and editors
+* Project leader of SANS 1883, the South African address standard that became a key
+  input to the ISO 19160 (Addressing) series
+* Project leadership of FERIN, the Framework for Extensible Registration of
+  Information, standardized in ISO 19135:2026
+
+== At Enosema
+
+* President of the Enosema Foundation
+* Leads the Foundation's standardization agenda for shared concepts and registers

@@ -1,5 +1,6 @@
 export interface Person {
   name: string
+  slug: string
   role: string
   blurb: string
   links?: Array<{ label: string; href: string }>
@@ -10,6 +11,7 @@ export interface Person {
 export const people: Person[] = [
   {
     name: 'Reese Plews',
+    slug: 'reese-plews',
     role: 'President',
     blurb:
       'Convenes the Terminology Management Group of ISO/TC 211, Geographic information/Geomatics, and coordinates its Multi-Lingual Glossary of Terms. Reese drives Enosema’s standardization agenda for shared concepts.',
@@ -19,6 +21,7 @@ export const people: Person[] = [
   },
   {
     name: 'Joanna Goodwin',
+    slug: 'joanna-goodwin',
     role: 'Founder',
     blurb:
       'Previously Terminology Coordinator at the IEC and secretary of IEC/TC 1, Terminology. Joanna brings deep experience in managing international electrotechnical terminology to the Foundation.',
@@ -29,6 +32,7 @@ export const people: Person[] = [
   },
   {
     name: 'Ronald Tse',
+    slug: 'ronald-tse',
     role: 'Founder',
     blurb:
       'Convenes Date and time at ISO/TC 154, e-Business, and is the founder of Ribose. Ronald works on open standards and machine-readable, smart standardization of concepts and their models.',

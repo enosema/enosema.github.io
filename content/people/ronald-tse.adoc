@@ -1,0 +1,25 @@
+---
+title: Ronald Tse
+---
+
+== Open standards, date and time, and semantic technology
+
+Ronald Tse is the founder and CEO of Ribose and a long-time contributor to
+international standardization, working on open standards and the machine-readable
+modeling of concepts.
+
+== Contributions to standards
+
+* Convenor of ISO/TC 154/WG 5, Date and time — the working group responsible for
+  the ISO 8601 series on date and time representations
+* Project leader of ISO/NP 23404
+* Project leader of FERIN, the Framework for Extensible Registration of Information
+* Vice President and Director of External Relations of CalConnect, The Calendaring
+  and Scheduling Consortium
+* Has served on CSA's International Standardization Council and as an expert at
+  ISO/IEC JTC 1/SC 27
+
+== At Enosema
+
+* Founder of the Enosema Foundation
+* Founder and CEO of Ribose
