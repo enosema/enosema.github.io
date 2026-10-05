@@ -1,0 +1,288 @@
+.asciidoc-content {
+  line-height: 1.75;
+  max-width: none;
+}
+
+.asciidoc-content .sect1 > h2 {
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-eno-green-dark);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+:is(.dark .asciidoc-content .sect1 > h2) {
+  color: var(--color-eno-green);
+}
+
+.asciidoc-content .sect2 > h3 {
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-eno-green-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+:is(.dark .asciidoc-content .sect2 > h3) {
+  color: #f3f4f6;
+}
+
+.asciidoc-content .sect3 > h4 {
+  font-size: 1.125rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-eno-green);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+:is(.dark .asciidoc-content .sect3 > h4) {
+  color: #e5e7eb;
+}
+
+.asciidoc-content .sect4 > h5 {
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+:is(.dark .asciidoc-content .sect4 > h5) {
+  color: #e5e7eb;
+}
+
+.asciidoc-content .paragraph > p {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+:is(.dark .asciidoc-content .paragraph > p) {
+  color: #d1d5db;
+}
+
+.asciidoc-content .ulist > ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.asciidoc-content .ulist > ul > li {
+  margin-bottom: 0.375rem;
+  color: #374151;
+}
+:is(.dark .asciidoc-content .ulist > ul > li) {
+  color: #d1d5db;
+}
+
+.asciidoc-content .olist > ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.asciidoc-content .olist > ol > li {
+  margin-bottom: 0.375rem;
+  color: #374151;
+}
+:is(.dark .asciidoc-content .olist > ol > li) {
+  color: #d1d5db;
+}
+
+.asciidoc-content .listingblock {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+:is(.dark .asciidoc-content .listingblock) {
+  background: rgb(17 24 39 / 0.8);
+  border-color: #374151;
+}
+
+.asciidoc-content .listingblock pre {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: #1f2937;
+  line-height: 1.625;
+}
+:is(.dark .asciidoc-content .listingblock pre) {
+  color: #e5e7eb;
+}
+
+.asciidoc-content .tableblock table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.asciidoc-content .tableblock th {
+  background: var(--color-eno-green);
+  color: white;
+  padding: 0.625rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+:is(.dark .asciidoc-content .tableblock th) {
+  background: var(--color-eno-green-dark);
+}
+
+.asciidoc-content .tableblock td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.625rem 1rem;
+  color: #374151;
+}
+:is(.dark .asciidoc-content .tableblock td) {
+  border-color: #374151;
+  color: #d1d5db;
+}
+
+.asciidoc-content .tableblock tr:hover td {
+  background: #f9fafb;
+}
+:is(.dark .asciidoc-content .tableblock tr:hover td) {
+  background: rgb(31 41 55 / 0.5);
+}
+
+.asciidoc-content .admonitionblock {
+  border-left: 4px solid;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.asciidoc-content .admonitionblock.note {
+  border-left-color: #3b82f6;
+  background: #eff6ff;
+}
+:is(.dark .asciidoc-content .admonitionblock.note) {
+  background: rgb(59 130 246 / 0.15);
+}
+
+.asciidoc-content .admonitionblock.warning {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+:is(.dark .asciidoc-content .admonitionblock.warning) {
+  background: rgb(245 158 11 / 0.15);
+}
+
+.asciidoc-content .admonitionblock .title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.asciidoc-content .admonitionblock .content {
+  color: #374151;
+  font-size: 0.875rem;
+}
+:is(.dark .asciidoc-content .admonitionblock .content) {
+  color: #d1d5db;
+}
+
+.asciidoc-content .imageblock {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.asciidoc-content .imageblock img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
+.asciidoc-content .dlist dt {
+  font-weight: 600;
+  color: var(--color-eno-green-dark);
+  margin-top: 1rem;
+}
+:is(.dark .asciidoc-content .dlist dt) {
+  color: #f3f4f6;
+}
+
+.asciidoc-content .dlist dd {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+:is(.dark .asciidoc-content .dlist dd) {
+  color: #d1d5db;
+}
+
+.asciidoc-content .exampleblock {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+:is(.dark .asciidoc-content .exampleblock) {
+  background: rgb(31 41 55 / 0.5);
+  border-color: #374151;
+}
+
+.asciidoc-content .exampleblock .title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+:is(.dark .asciidoc-content .exampleblock .title) {
+  color: #9ca3af;
+}
+
+.asciidoc-content .stemblock {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.asciidoc-content .quoteblock {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #4b5563;
+}
+:is(.dark .asciidoc-content .quoteblock) {
+  border-left-color: #4b5563;
+  color: #9ca3af;
+}
+
+.asciidoc-content a {
+  color: var(--color-eno-green);
+}
+.asciidoc-content a:hover {
+  text-decoration: underline;
+}
+:is(.dark .asciidoc-content a) {
+  color: var(--color-eno-green);
+}
+
+.asciidoc-content code {
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: var(--color-eno-green-dark);
+}
+:is(.dark .asciidoc-content code) {
+  background: #1f2937;
+  color: var(--color-eno-green);
+}
+
+.asciidoc-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.asciidoc-content hr {
+  border-color: #e5e7eb;
+  margin: 2rem 0;
+}
+:is(.dark .asciidoc-content hr) {
+  border-color: #374151;
+}

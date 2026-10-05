@@ -1,0 +1,264 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import AnimatedSection from '@/components/AnimatedSection.astro'
+import BaseButton from '@/components/BaseButton.astro'
+import BaseCard from '@/components/BaseCard.astro'
+import HomeHeadline from '@/components/HomeHeadline.vue'
+import HomeConceptCard from '@/components/HomeConceptCard.vue'
+import { getList, formatDate } from '@/lib/content'
+
+const posts = getList('posts').slice(0, 3)
+
+const workDomains = [
+  {
+    title: 'Terminology',
+    blurb: 'Standardized terms, definitions and concept hierarchies — managed within a dictionary and reconciled across dictionaries.',
+    icon: 'M3 5h18M3 10h18M3 15h12M3 20h6',
+  },
+  {
+    title: 'Ontology',
+    blurb: 'Explicit models of the relationships between concepts, so people and information systems share one model of a domain.',
+    icon: 'M12 3v6m0 6v6m-9-9h6m6 0h6M5.6 5.6l4.2 4.2m4.4 4.4l4.2 4.2m0-12.8l-4.2 4.2m-4.4 4.4l-4.2 4.2',
+  },
+  {
+    title: 'Semantics',
+    blurb: 'Semantic interoperability: an identical meaning communicated and interpreted across domains, languages and information systems.',
+    icon: 'M8 12h8m-4-4v8m0-11a8 8 0 100 16 8 8 0 000-16z',
+  },
+]
+
+const programme = [
+  {
+    title: 'Concept management within a dictionary',
+    blurb: 'Best practices for arranging new concepts in the right place, in relation to concepts already present.',
+  },
+  {
+    title: 'Concept mappings across dictionaries',
+    blurb: 'Identifying identical concepts that use different terms — and different concepts that share the same term.',
+  },
+  {
+    title: 'Version management',
+    blurb: 'Managing every version of a concept and of the relationships between concepts across dictionaries.',
+  },
+]
+
+const milestones = [
+  { year: '2021', event: 'First Shared Concepts Workshop with ISO/TC 211, SDFE and Ribose — 80+ experts across two sessions' },
+  { year: '2022', event: 'Enosema Foundation established as a US 501(c)(3) tax-exempt, non-profit organization' },
+  { year: '2022', event: 'Joins the Metaverse Standards Forum as a Principal and founding member' },
+]
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-bg to-white dark:from-pine dark:to-pine-light/30">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 right-[10%] w-[500px] h-[500px] rounded-full bg-eno-green/[0.04] dark:bg-eno-green/[0.03] blur-3xl"></div>
+      <div class="absolute bottom-0 left-[5%] w-[300px] h-[300px] rounded-full bg-eno-green-light/[0.06] dark:bg-eno-green/[0.02] blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 lg:pt-28 lg:pb-28">
+      <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+        <div class="max-w-xl flex-1 min-w-0">
+          <div class="flex items-center gap-3 mb-5">
+            <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light">
+              International standards for concepts management
+            </p>
+            <span class="text-[0.6rem] font-mono font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full border border-eno-green/30 dark:border-eno-green-light/40 text-eno-green-dark dark:text-eno-green-light bg-eno-green/5 dark:bg-eno-green/10">501(c)(3)</span>
+          </div>
+          <HomeHeadline client:load />
+          <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">
+            The Enosema Foundation develops international standards for managing concepts
+            and their usage across organizations — in terminology, ontology and semantics.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <BaseButton to="/about" size="lg">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              What we do
+            </BaseButton>
+            <BaseButton to="/membership" variant="secondary" size="lg">
+              Become a member
+            </BaseButton>
+          </div>
+
+          <!-- Quick stats -->
+          <div class="mt-10 flex gap-8 text-sm">
+            <div>
+              <p class="font-mono text-2xl font-bold text-eno-green dark:text-eno-green-light">80+</p>
+              <p class="text-gray-500 dark:text-gray-400 mt-0.5">Workshop experts</p>
+            </div>
+            <div>
+              <p class="font-mono text-2xl font-bold text-eno-green dark:text-eno-green-light">ISO/IEC</p>
+              <p class="text-gray-500 dark:text-gray-400 mt-0.5">Founding heritage</p>
+            </div>
+            <div>
+              <p class="font-mono text-2xl font-bold text-eno-green dark:text-eno-green-light">2021</p>
+              <p class="text-gray-500 dark:text-gray-400 mt-0.5">First workshop</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concept register card with typewriter -->
+        <div class="flex items-start justify-center w-full lg:w-[440px] shrink-0 mt-8 lg:mt-10">
+          <HomeConceptCard client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we work on -->
+  <section class="py-24 bg-white dark:bg-pine">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection>
+        <div class="text-center mb-16">
+          <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light mb-3">Our work</p>
+          <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">Three domains, one mission</h2>
+          <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+            Enosema contributes to the mutual understanding of entities by providing insight and clarity to concepts.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {
+          workDomains.map((domain, i) => (
+            <AnimatedSection delay={i * 60}>
+              <BaseCard padding="lg">
+                <div class="w-10 h-10 rounded-lg bg-eno-green/8 dark:bg-eno-green/10 flex items-center justify-center mb-4">
+                  <svg class="w-5 h-5 text-eno-green dark:text-eno-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={domain.icon} /></svg>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-gray-900 dark:text-white mb-2">{domain.title}</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{domain.blurb}</p>
+              </BaseCard>
+            </AnimatedSection>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Work programme -->
+  <section class="py-20 bg-gray-50 dark:bg-pine-light/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection>
+        <div class="text-center mb-14">
+          <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light mb-3">Standardization</p>
+          <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">The technical work programme</h2>
+          <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+            Performed by the Technical Committee’s working groups, covering the full lifecycle of shared concepts.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      <div class="grid sm:grid-cols-3 gap-5">
+        {
+          programme.map((item, i) => (
+            <AnimatedSection delay={i * 80}>
+              <div class="rounded-xl border border-gray-200/80 dark:border-gray-700/60 bg-white dark:bg-pine-light p-6 h-full">
+                <p class="font-mono text-xs text-eno-green dark:text-eno-green-light mb-3">{String(i + 1).padStart(2, '0')}</p>
+                <h3 class="font-serif font-bold text-gray-900 dark:text-white mb-2 leading-snug">{item.title}</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.blurb}</p>
+              </div>
+            </AnimatedSection>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-20 bg-white dark:bg-pine">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection>
+        <div class="text-center mb-14">
+          <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light mb-3">History</p>
+          <h2 class="text-3xl font-serif font-bold text-gray-900 dark:text-white">From workshop to foundation</h2>
+        </div>
+      </AnimatedSection>
+
+      <div class="relative">
+        <div class="absolute left-4 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-eno-green/30 via-eno-green/10 to-transparent dark:from-eno-green-light/30 dark:via-eno-green-light/10"></div>
+        <div class="space-y-8">
+          {
+            milestones.map((ms, i) => (
+              <AnimatedSection delay={i * 80}>
+                <div class="relative flex items-start gap-6 sm:gap-8">
+                  <div class="relative z-10 shrink-0">
+                    <div class="w-8 sm:w-16 h-8 sm:h-16 rounded-full bg-white dark:bg-pine-light border-2 border-eno-green/30 dark:border-eno-green-light/30 flex items-center justify-center">
+                      <span class="font-mono text-xs sm:text-sm font-bold text-eno-green dark:text-eno-green-light">{ms.year}</span>
+                    </div>
+                  </div>
+                  <div class="pt-1 sm:pt-4">
+                    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{ms.event}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="py-24 bg-gray-50 dark:bg-pine-light/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection>
+        <div class="flex items-center justify-between mb-12">
+          <div>
+            <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light mb-2">Latest news</p>
+            <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white">From the foundation</h2>
+          </div>
+          <BaseButton to="/blog" variant="ghost" size="sm">
+            View all
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </BaseButton>
+        </div>
+      </AnimatedSection>
+
+      {
+        posts.length > 0 && (
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {posts.map((post, i) => (
+              <AnimatedSection delay={i * 80}>
+                <BaseCard to={`/blog/${post.slug}/`} padding="lg">
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="font-mono text-xs text-gray-400 dark:text-gray-500">{formatDate(post.date!)}</span>
+                    {post.categories.map((cat) => (
+                      <span class="text-[0.65rem] px-2 py-0.5 rounded-full bg-eno-green/8 dark:bg-eno-green/10 text-eno-green-dark dark:text-eno-green-light font-medium tracking-wide">{cat}</span>
+                    ))}
+                  </div>
+                  <h3 class="font-serif font-bold text-lg text-gray-900 dark:text-white leading-snug">{post.title}</h3>
+                  {post.excerpt && <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3">{post.excerpt}</p>}
+                  {post.authors.length > 0 && <p class="mt-3 text-xs text-gray-400 dark:text-gray-500">{post.authors.map((a) => a.name).join(', ')}</p>}
+                </BaseCard>
+              </AnimatedSection>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- Membership CTA -->
+  <section class="relative overflow-hidden py-20 bg-eno-green-dark dark:bg-eno-green-deep">
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+      <div class="absolute -top-24 right-[15%] w-[400px] h-[400px] rounded-full border-[40px] border-white blur-[2px]"></div>
+      <div class="absolute -bottom-32 left-[5%] w-[350px] h-[350px] rounded-full border-[30px] border-white blur-[2px]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <AnimatedSection>
+        <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green-light/80 mb-3">Membership</p>
+        <h2 class="text-3xl font-serif font-bold text-white">Help standardize shared concepts</h2>
+        <p class="mt-4 text-eno-green-light/90 max-w-xl mx-auto leading-relaxed">
+          Enosema membership is open to all parties internationally — organizations and individuals —
+          through an annual donation.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <BaseButton to="/membership" class="!bg-white !text-eno-green-dark hover:!bg-gray-100" size="lg">Membership options</BaseButton>
+          <BaseButton href="mailto:info@enosema.org" variant="secondary" class="!border-white/40 !text-white hover:!bg-white/10 hover:!border-white" size="lg">Contact us</BaseButton>
+        </div>
+      </AnimatedSection>
+    </div>
+  </section>
+</BaseLayout>

@@ -4,5 +4,9 @@ https://www.linkedin.com*
 .*@.*example.com
 (ht|f)tps?://.*\.?example\.(com|org).*
 /docs
+
+# Bot-blocked: these sites reject automated clients (403) but work in browsers
+https://www.iso.org*
 https://www.iec.ch*
+https://committee.iso.org*
 https://eng.sdfe.dk*

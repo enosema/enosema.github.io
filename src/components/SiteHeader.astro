@@ -1,0 +1,143 @@
+---
+import { mainNavigation } from '@/data/navigation'
+
+interface Props {
+  currentPath: string
+}
+
+const { currentPath } = Astro.props
+
+function isActive(item: { path: string }): boolean {
+  return currentPath === item.path || currentPath.startsWith(item.path + '/')
+}
+
+const linkClasses =
+  'relative px-3 py-2 text-[0.8rem] font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-md transition-colors duration-150'
+const activeText = '!text-eno-green dark:!text-eno-green-light'
+---
+
+<header data-site-header class="sticky top-0 z-40 bg-white dark:bg-pine transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 shrink-0 group" data-close-mobile-nav>
+        <img src="/logos/logo-symbol-green.svg" alt="" class="h-8 shrink-0 dark:hidden" />
+        <img src="/logos/logo-symbol-white.svg" alt="" class="h-8 shrink-0 hidden dark:block" />
+        <div class="flex flex-col leading-none">
+          <span class="font-logo font-bold text-[0.9rem] tracking-[0.06em] text-eno-green-dark dark:text-white">ENOSEMA</span>
+          <span class="font-logo font-medium text-[0.58rem] tracking-[0.1em] text-eno-green/70 dark:text-gray-400 mt-[3px]">Foundation</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
+        {
+          mainNavigation.map((item) => (
+            <a href={item.path} class:list={[linkClasses, isActive(item) && activeText]}>
+              {item.title}
+              {isActive(item) && <span class="absolute bottom-0 left-3 right-3 h-0.5 bg-eno-green dark:bg-eno-green-light rounded-full" />}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-2">
+        <button
+          data-theme-toggle
+          class="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-eno-green dark:hover:text-eno-green-light transition-colors duration-150"
+          aria-label="Toggle dark mode"
+        >
+          <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
+        <a
+          href="https://github.com/enosema"
+          target="_blank"
+          rel="noopener"
+          class="hidden sm:flex p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors rounded-md"
+          aria-label="GitHub"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <button
+          data-mobile-nav-toggle
+          class="lg:hidden p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-md transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" data-icon-open fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="w-6 h-6 hidden" data-icon-close fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer (sibling of header: no backdrop-filter ancestor to trap fixed positioning) -->
+  <div data-mobile-nav class="fixed inset-0 z-50 lg:hidden hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm" data-close-mobile-nav></div>
+    <div id="mobile-nav" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-pine shadow-2xl">
+      <div class="flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800">
+        <span class="font-serif font-bold text-gray-900 dark:text-white">Navigation</span>
+        <button data-close-mobile-nav class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 rounded-md min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Close menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="p-4 space-y-1" aria-label="Mobile navigation">
+        {
+          mainNavigation.map((item) => (
+            <a
+              href={item.path}
+              data-close-mobile-nav
+              class:list={[
+                'flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors min-h-[44px]',
+                isActive(item)
+                  ? 'text-eno-green-dark dark:text-eno-green-light bg-eno-green/5 dark:bg-pine-light'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-pine-light',
+              ]}
+            >
+              {item.title}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-site-header]')!
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10)
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]')) {
+    button.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark')
+      localStorage.setItem('theme', dark ? 'dark' : 'light')
+    })
+  }
+
+  const drawer = document.querySelector('[data-mobile-nav]')!
+  const toggle = document.querySelector<HTMLButtonElement>('[data-mobile-nav-toggle]')!
+  const iconOpen = toggle.querySelector('[data-icon-open]')!
+  const iconClose = toggle.querySelector('[data-icon-close]')!
+
+  function setNav(open: boolean) {
+    drawer.classList.toggle('hidden', !open)
+    toggle.setAttribute('aria-expanded', String(open))
+    iconOpen.classList.toggle('hidden', open)
+    iconClose.classList.toggle('hidden', !open)
+    document.body.style.overflow = open ? 'hidden' : ''
+  }
+
+  toggle.addEventListener('click', () => setNav(drawer.classList.contains('hidden')))
+  for (const closer of drawer.querySelectorAll('[data-close-mobile-nav]')) {
+    closer.addEventListener('click', () => setNav(false))
+  }
+</script>

@@ -9,3 +9,5 @@ Gemfile.lock
 CLAUDE.md
 .vscode
 .lycheecache
+.astro
+src/content

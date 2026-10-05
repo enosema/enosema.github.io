@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHero from '@/components/PageHero.astro'
+import AsciiDocContent from '@/components/AsciiDocContent.astro'
+import { getContent } from '@/lib/content'
+
+const content = getContent('pages', 'references')
+const title = content?.title || 'References'
+---
+
+<BaseLayout title={title} description="Shared concept references provided in ISO 690 citation format.">
+  <PageHero eyebrow="References" title={title} crumbs={[{ label: 'Home', to: '/' }, { label: 'References' }]} width="3xl" compact />
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    {
+      content ? (
+        <AsciiDocContent html={content.body} />
+      ) : (
+        <div class="text-center py-20 text-gray-400">
+          <p class="font-mono text-sm">Content not available yet.</p>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

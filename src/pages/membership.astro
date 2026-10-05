@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHero from '@/components/PageHero.astro'
+import AnimatedSection from '@/components/AnimatedSection.astro'
+import BaseButton from '@/components/BaseButton.astro'
+import { siteData } from '@/data/site'
+
+const tiers = [
+  {
+    name: 'Corporate',
+    requirement: 'Annual donation',
+    benefits: ['Participation of corporate staff in the Enosema Technical Committees', 'Voting rights in the Technical Committees'],
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5',
+  },
+  {
+    name: 'Individual',
+    requirement: 'Annual donation',
+    benefits: ['Participation in Technical Committees and working groups', 'Expert capacity in the Foundation’s technical work'],
+    icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
+  },
+  {
+    name: 'Founding',
+    requirement: 'By invitation',
+    benefits: ['Carries the same benefits as corporate membership', 'No annual donation requirement'],
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+  },
+]
+---
+
+<BaseLayout title="Membership" description="Enosema membership is open to all parties internationally through an annual donation.">
+  <PageHero
+    eyebrow="Membership"
+    title="Join the Enosema Foundation"
+    lead="Enosema serves organizations and individuals alike with a need in defining interchangeable concepts and their models across information systems. Membership is open to all parties internationally through an annual donation."
+    crumbs={[{ label: 'Home', to: '/' }, { label: 'Membership' }]}
+  />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        tiers.map((tier, i) => (
+          <AnimatedSection delay={i * 80}>
+            <div class="rounded-xl border border-gray-200/80 dark:border-gray-700/60 bg-white dark:bg-pine-light p-8 h-full flex flex-col transition-all duration-200 hover:border-eno-green/30 dark:hover:border-eno-green/30 hover:-translate-y-0.5 hover:shadow-lg">
+              <div class="w-10 h-10 rounded-lg bg-eno-green/8 dark:bg-eno-green/10 flex items-center justify-center mb-5">
+                <svg class="w-5 h-5 text-eno-green dark:text-eno-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={tier.icon} /></svg>
+              </div>
+              <h2 class="font-serif font-bold text-xl text-gray-900 dark:text-white">{tier.name}</h2>
+              <p class="font-mono text-xs text-eno-green dark:text-eno-green-light tracking-wide mt-1.5 uppercase">{tier.requirement}</p>
+              <ul class="mt-5 space-y-3 flex-1">
+                {tier.benefits.map((benefit) => (
+                  <li class="flex items-start gap-2.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                    <svg class="w-4 h-4 mt-0.5 text-eno-green dark:text-eno-green-light shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimatedSection>
+        ))
+      }
+    </div>
+
+    <AnimatedSection>
+      <div class="mt-16 rounded-xl border border-eno-green/20 dark:border-eno-green/20 bg-eno-green/5 dark:bg-eno-green/10 p-8 sm:p-10 text-center">
+        <h2 class="text-xl font-serif font-bold text-gray-900 dark:text-white">Membership inquiries</h2>
+        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 max-w-md mx-auto leading-relaxed">
+          To become a member, or to learn more about the Foundation and its technical committees, please contact us.
+        </p>
+        <div class="mt-6">
+          <BaseButton href={`mailto:${siteData.email}`} size="lg">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            {siteData.email}
+          </BaseButton>
+        </div>
+      </div>
+    </AnimatedSection>
+  </div>
+</BaseLayout>

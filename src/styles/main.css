@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/container-queries';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../src/**/*.astro';
+@source '../../src/**/*.vue';
+@source '../../src/**/*.ts';
+
+@theme {
+  --color-eno-green: #25a000;
+  --color-eno-green-dark: #007724;
+  --color-eno-green-deep: #0d4c00;
+  --color-eno-green-light: #aced99;
+  --color-pine: #141a15;
+  --color-pine-light: #1e281f;
+  --color-slate-bg: #f4faf1;
+
+  --font-sans: 'Fira Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Montserrat', 'Fira Sans', system-ui, -apple-system, sans-serif;
+  --font-logo: 'Montserrat', 'Fira Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #25a000;
+  color: white;
+}
+:is(.dark ::selection) {
+  background: #25a000;
+  color: white;
+}
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid #25a000;
+  outline-offset: 2px;
+}
+:is(.dark :focus-visible) {
+  outline-color: #aced99;
+}
+
+/* Subtle horizontal rule */
+hr {
+  border-color: #e5e7eb;
+}
+:is(.dark hr) {
+  border-color: #374151;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scroll-reveal, driven by a global IntersectionObserver in BaseLayout */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+[data-animate].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Site header scrolled state (toggled by script in SiteHeader.astro) */
+[data-site-header].is-scrolled {
+  background-color: color-mix(in srgb, white 90%, transparent);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 2px 0 rgb(17 24 39 / 0.05);
+}
+.dark [data-site-header].is-scrolled {
+  background-color: color-mix(in srgb, var(--color-pine) 90%, transparent);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+}
