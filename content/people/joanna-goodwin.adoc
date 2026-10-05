@@ -1,0 +1,28 @@
+---
+title: Joanna Goodwin
+---
+
+== Standards identification and terminology
+
+Joanna Goodwin has spent her career where standards publishing meets terminology
+management, serving international standardization at the International Organization
+for Standardization (ISO) and the International Electrotechnical Commission (IEC).
+
+== Contributions to standards
+
+* Author of RFC 5141, _A Uniform Resource Name (URN) Namespace for the International
+  Organization for Standardization (ISO)_ (IETF, 2008), with Holger Apel — the
+  specification behind the `urn:iso:std:` identifiers, which give ISO standards,
+  their editions, supplements, languages, and even individual clauses, tables, and
+  terms persistent, location-independent identification on the Internet
+* Named in RFC 5141 as the declared registrant of the ISO URN namespace, on behalf
+  of the ISO Central Secretariat
+* Terminology Coordinator at the IEC, coordinating terminology across the IEC's
+  technical committees
+* Secretary of IEC/TC 1, Terminology — the committee that maintains the International
+  Electrotechnical Vocabulary (IEV)
+
+== At Enosema
+
+* Founder of the Enosema Foundation
+* Terminology strategy and liaison with the ISO and IEC communities

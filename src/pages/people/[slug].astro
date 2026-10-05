@@ -1,0 +1,71 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import AsciiDocContent from '@/components/AsciiDocContent.astro'
+import { getContent } from '@/lib/content'
+import { people } from '@/data/people'
+
+export function getStaticPaths() {
+  return people.map((person) => ({ params: { slug: person.slug }, props: { person } }))
+}
+
+const { person } = Astro.props
+const content = getContent('people', person.slug)
+---
+
+<BaseLayout title={content?.title ?? person.name} description={person.blurb}>
+  <div class="bg-gradient-to-b from-slate-bg to-white dark:from-pine dark:to-pine-light/30 pt-12 pb-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="text-sm text-gray-400 dark:text-gray-500 mb-6 flex items-center gap-1.5">
+        <a href="/" class="hover:text-eno-green dark:hover:text-eno-green-light transition-colors">Home</a>
+        <span class="text-gray-300 dark:text-gray-600">/</span>
+        <a href="/about" class="hover:text-eno-green dark:hover:text-eno-green-light transition-colors">About</a>
+        <span class="text-gray-300 dark:text-gray-600">/</span>
+        <span class="text-gray-700 dark:text-gray-300">{person.name}</span>
+      </nav>
+      <div class="flex items-center gap-5">
+        <div class="w-16 h-16 rounded-full bg-eno-green/10 dark:bg-eno-green/10 flex items-center justify-center shrink-0">
+          <span class="text-2xl font-serif font-bold text-eno-green dark:text-eno-green-light">{person.name.charAt(0)}</span>
+        </div>
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 dark:text-white leading-tight">{person.name}</h1>
+          <p class="font-mono text-sm text-eno-green dark:text-eno-green-light tracking-wide mt-1">{person.role}</p>
+        </div>
+      </div>
+      {
+        person.links && person.links.length > 0 && (
+          <ul class="flex flex-wrap gap-2 mt-6">
+            {person.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1.5 rounded-full border border-gray-200/80 dark:border-gray-700/60 bg-white/60 dark:bg-pine-light/60 px-3 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-300 hover:border-eno-green/40 dark:hover:border-eno-green/40 hover:text-eno-green-dark dark:hover:text-eno-green-light transition-colors"
+                >
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-10">
+    {
+      content ? (
+        <AsciiDocContent html={content.body} />
+      ) : (
+        <p class="font-mono text-sm text-gray-400">Profile content not available yet.</p>
+      )
+    }
+    <div class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800">
+      <a href="/about#founders" class="inline-flex items-center gap-2 text-sm font-medium text-eno-green-dark dark:text-eno-green-light hover:underline">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        All founders
+      </a>
+    </div>
+  </div>
+</BaseLayout>
