@@ -13,8 +13,10 @@ Group (TMG) of ISO/TC 211, Geographic information/Geomatics.
 * Convenor of the ISO/TC 211 Terminology Maintenance Group (TMG), overseeing the
   committee's terminology work including its Multi-Lingual Glossary of Terms, and
   providing editorial guidance to the committee's project leaders and editors
-* Project leadership of FERIN, the Framework for Extensible Registration of
-  Information, standardized in ISO 19135:2026
+* Represents JIPDEC/JISC in ISO/TC 211
+* Project leader of the ISO 19155 series, Place identifiers
+* Project leader of ISO 19135:2026, the International Standard for information
+  registration and the basis of FERIN, and of ISO/PWI 19173
 
 == At Enosema
 
