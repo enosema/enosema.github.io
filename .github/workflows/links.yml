@@ -10,17 +10,17 @@ jobs:
   link_checker:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
-    - uses: ruby/setup-ruby@v1
+    - uses: actions/setup-node@v7
       with:
-        ruby-version: '3.3'
-        bundler-cache: true
+        node-version: '22'
+        cache: 'npm'
 
     - name: Build site
-      env:
-        JEKYLL_ENV: production
-      run: bundle exec jekyll build
+      run: |
+        npm ci
+        npm run build
 
     - name: Restore lychee cache
       uses: actions/cache@v4
@@ -29,15 +29,10 @@ jobs:
         key: cache-lychee-${{ github.sha }}
         restore-keys: cache-lychee-
 
-    - name: Run lychee
+    - name: Link Checker
       uses: lycheeverse/lychee-action@v2
       with:
-        args: --verbose --no-progress --base '_site' --cache --max-cache-age 1d --root-dir / '_site/**/*.html'
+        args: --verbose --no-progress --root-dir dist --cache --max-cache-age 1d -- dist/**/*.html
         fail: true
-
-      # - name: Create Issue From File
-      #   uses: peter-evans/create-issue-from-file@v2
-      #   with:
-      #     title: Link Checker Report
-      #     content-filepath: ./lychee/out.md
-      #     labels: report, automated issue
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

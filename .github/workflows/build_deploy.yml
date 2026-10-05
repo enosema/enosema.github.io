@@ -4,71 +4,47 @@ on:
   push:
     branches:
     - main
-    # - staging
   pull_request:
   repository_dispatch:
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  # set_environment:
-  #   outputs:
-  #     my_env: ${{ steps.setenv.outputs.my_env }}
-  #     my_url: ${{ steps.setenv.outputs.my_url }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - id: setenv
-  #     run: |
-  #       if [ "$GITHUB_REF" = "refs/heads/main" ]
-  #       then
-  #         echo "::set-output name=my_env::production"
-  #         echo "::set-output name=my_url::https://www.enosema.org"
-  #       elif [ "$GITHUB_REF" = "refs/heads/staging" ]
-  #       then
-  #         echo "::set-output name=my_env::staging"
-  #         echo "::set-output name=my_url::https://staging-www.enosema.org"
-  #       fi
-
   build:
+    name: Build site
     runs-on: ubuntu-latest
-    # needs: [set_environment]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+    - uses: actions/setup-node@v7
+      with:
+        node-version: '22'
+        cache: 'npm'
 
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v6
 
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+    - name: Build site
+      run: |
+        npm ci
+        npm run build
 
-  # Deployment job
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v5
+      with:
+        path: dist
+
   deploy:
+    name: Deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -76,6 +52,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v5
