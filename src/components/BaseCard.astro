@@ -1,0 +1,24 @@
+---
+interface Props {
+  hover?: boolean
+  to?: string
+  href?: string
+  padding?: 'sm' | 'md' | 'lg'
+  class?: string
+}
+
+const { hover = true, to, href, padding = 'md', class: className = '' } = Astro.props
+
+const paddingClasses: Record<string, string> = { sm: 'p-4', md: 'p-6', lg: 'p-8' }
+
+const classes = [
+  'block rounded-xl border border-gray-200/80 dark:border-gray-700/60 bg-white dark:bg-pine-light transition-all duration-200',
+  paddingClasses[padding],
+  className,
+  hover && 'hover:border-eno-green/30 dark:hover:border-eno-green/30 hover:shadow-lg hover:shadow-eno-green/5 dark:hover:shadow-eno-green/5 hover:-translate-y-0.5',
+]
+  .filter(Boolean)
+  .join(' ')
+---
+
+{to ? <a href={to} class={classes}><slot /></a> : href ? <a href={href} target="_blank" rel="noopener" class={classes}><slot /></a> : <div class={classes}><slot /></div>}

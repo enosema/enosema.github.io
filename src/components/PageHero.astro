@@ -1,0 +1,38 @@
+---
+interface Props {
+  eyebrow?: string
+  title: string
+  lead?: string
+  crumbs?: Array<{ label: string; to?: string }>
+  width?: '3xl' | '4xl'
+  compact?: boolean
+}
+
+const { eyebrow, title, lead, crumbs, width = '4xl', compact = false } = Astro.props
+---
+
+<div class={`bg-gradient-to-b from-slate-bg to-white dark:from-pine dark:to-pine-light/30 pt-12 ${compact ? 'pb-8' : 'pb-12'}`}>
+  <div class={`mx-auto px-4 sm:px-6 lg:px-8 ${width === '3xl' ? 'max-w-3xl' : 'max-w-4xl'}`}>
+    {
+      crumbs && crumbs.length > 0 && (
+        <nav class="text-sm text-gray-400 dark:text-gray-500 mb-6 flex items-center gap-1.5">
+          {crumbs.map((crumb, i) => (
+            <>
+              {i > 0 && <span class="text-gray-300 dark:text-gray-600">/</span>}
+              {crumb.to ? (
+                <a href={crumb.to} class="hover:text-eno-green dark:hover:text-eno-green-light transition-colors">
+                  {crumb.label}
+                </a>
+              ) : (
+                <span class="text-gray-700 dark:text-gray-300">{crumb.label}</span>
+              )}
+            </>
+          ))}
+        </nav>
+      )
+    }
+    {eyebrow && <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light mb-3">{eyebrow}</p>}
+    <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 dark:text-white leading-tight">{title}</h1>
+    {lead && <p class="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-2xl leading-relaxed">{lead}</p>}
+  </div>
+</div>

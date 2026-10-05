@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHero from '@/components/PageHero.astro'
+import AnimatedSection from '@/components/AnimatedSection.astro'
+import AsciiDocContent from '@/components/AsciiDocContent.astro'
+import { getList, formatDate } from '@/lib/content'
+
+export async function getStaticPaths() {
+  const posts = getList('posts')
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+---
+
+<BaseLayout title={post.title} description={post.excerpt || post.title}>
+  <PageHero
+    eyebrow="Blog"
+    title={post.title}
+    crumbs={[{ label: 'Home', to: '/' }, { label: 'Blog', to: '/blog' }, { label: post.date ? formatDate(post.date) : post.slug }]}
+    width="3xl"
+    compact
+  />
+
+  <div class="bg-white dark:bg-pine">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <AnimatedSection>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 pb-8 border-b border-gray-100 dark:border-gray-800">
+          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <time datetime={post.date ?? undefined}>{post.date ? formatDate(post.date) : ''}</time>
+          </div>
+          {post.categories.map((cat) => (
+            <span class="text-[0.65rem] px-2 py-0.5 rounded-full bg-eno-green/8 dark:bg-eno-green/10 text-eno-green-dark dark:text-eno-green-light font-medium tracking-wide">{cat}</span>
+          ))}
+          {
+            post.authors.length > 0 && (
+              <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                {post.authors.map((a) => a.name).join(', ')}
+              </div>
+            )
+          }
+        </div>
+      </AnimatedSection>
+
+      <div class="pt-10">
+        <AsciiDocContent html={post.body} />
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-medium text-eno-green-dark dark:text-eno-green-light hover:underline">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          All posts
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

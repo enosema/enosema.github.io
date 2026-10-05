@@ -1,0 +1,45 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost'
+  size?: 'sm' | 'md' | 'lg'
+  href?: string
+  to?: string
+  class?: string
+}
+
+const { variant = 'primary', size = 'md', href, to, class: className = '' } = Astro.props
+
+const sizeClasses: Record<string, string> = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-2.5 text-sm',
+  lg: 'px-8 py-3.5 text-base',
+}
+
+const baseClasses =
+  'inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eno-green dark:focus-visible:outline-eno-green-light min-h-[44px]'
+
+const variantClasses: Record<string, string> = {
+  primary: 'bg-eno-green dark:bg-eno-green text-white hover:bg-eno-green-dark dark:hover:brightness-110',
+  secondary:
+    'border border-eno-green/30 dark:border-eno-green/30 text-eno-green-dark dark:text-eno-green-light hover:bg-eno-green/5 dark:hover:bg-eno-green/5 hover:border-eno-green dark:hover:border-eno-green',
+  ghost: 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-pine-light',
+}
+
+const classes = [baseClasses, sizeClasses[size], variantClasses[variant], className].join(' ')
+---
+
+{
+  to ? (
+    <a href={to} class={classes}>
+      <slot />
+    </a>
+  ) : href ? (
+    <a href={href} target="_blank" rel="noopener" class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classes}>
+      <slot />
+    </button>
+  )
+}
