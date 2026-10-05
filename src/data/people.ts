@@ -3,6 +3,7 @@ export interface Person {
   slug: string
   role: string
   blurb: string
+  photo?: string
   links?: Array<{ label: string; href: string }>
 }
 
@@ -36,6 +37,7 @@ export const people: Person[] = [
     role: 'Founder',
     blurb:
       'Convenes Date and time at ISO/TC 154, e-Business, and is the founder of Ribose. Ronald works on open standards and machine-readable, smart standardization of concepts and their models.',
+    photo: '/images/people/ronald-tse.jpg',
     links: [
       { label: 'ISO/TC 154 — e-Business', href: 'https://www.isotc154.org' },
       { label: 'Ribose', href: 'https://www.ribose.com' },
