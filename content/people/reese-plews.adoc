@@ -13,8 +13,6 @@ Group (TMG) of ISO/TC 211, Geographic information/Geomatics.
 * Convenor of the ISO/TC 211 Terminology Maintenance Group (TMG), overseeing the
   committee's terminology work including its Multi-Lingual Glossary of Terms, and
   providing editorial guidance to the committee's project leaders and editors
-* Project leader of SANS 1883, the South African address standard that became a key
-  input to the ISO 19160 (Addressing) series
 * Project leadership of FERIN, the Framework for Extensible Registration of
   Information, standardized in ISO 19135:2026
 

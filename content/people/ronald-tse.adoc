@@ -12,7 +12,6 @@ modeling of concepts.
 
 * Convenor of ISO/TC 154/WG 5, Date and time — the working group responsible for
   the ISO 8601 series on date and time representations
-* Project leader of ISO/NP 23404
 * Project leader of FERIN, the Framework for Extensible Registration of Information
 * Vice President and Director of External Relations of CalConnect, The Calendaring
   and Scheduling Consortium
