@@ -1,5 +1,5 @@
 ---
-import { mainNavigation } from '@/data/navigation'
+import { mainNavigation, type NavItem } from '@/data/navigation'
 
 interface Props {
   currentPath: string
@@ -7,7 +7,8 @@ interface Props {
 
 const { currentPath } = Astro.props
 
-function isActive(item: { path: string }): boolean {
+function isActive(item: NavItem): boolean {
+  if (item.external) return false
   return currentPath === item.path || currentPath.startsWith(item.path + '/')
 }
 
@@ -20,22 +21,24 @@ const activeText = '!text-eno-green dark:!text-eno-green-light'
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2.5 shrink-0 group" data-close-mobile-nav>
-        <img src="/logos/logo-symbol-green.svg" alt="" class="h-8 shrink-0 dark:hidden" />
-        <img src="/logos/logo-symbol-white.svg" alt="" class="h-8 shrink-0 hidden dark:block" />
-        <div class="flex flex-col leading-none">
-          <span class="font-logo font-bold text-[0.9rem] tracking-[0.06em] text-eno-green-dark dark:text-white">ENOSEMA</span>
-          <span class="font-logo font-medium text-[0.58rem] tracking-[0.1em] text-eno-green/70 dark:text-gray-400 mt-[3px]">Foundation</span>
-        </div>
+      <a href="/" class="flex items-center gap-3 shrink-0" data-close-mobile-nav aria-label="Enosema Foundation home">
+        <img src="/logos/logo-symbol-green.svg" alt="" class="h-9 w-9 shrink-0 hidden sm:block dark:hidden" />
+        <img src="/logos/logo-symbol-white.svg" alt="" class="h-9 w-9 shrink-0 hidden dark:sm:block" />
+        <img src="/logos/logo-text-green.svg" alt="Enosema Foundation" class="h-5 w-auto shrink-0 dark:hidden" />
+        <img src="/logos/logo-text-white.svg" alt="Enosema Foundation" class="h-5 w-auto shrink-0 hidden dark:block" />
       </a>
 
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
         {
           mainNavigation.map((item) => (
-            <a href={item.path} class:list={[linkClasses, isActive(item) && activeText]}>
+            <a
+              href={item.path}
+              {...(item.external ? { target: '_blank', rel: 'noopener' } : {})}
+              class:list={[linkClasses, !item.external && isActive(item) && activeText]}
+            >
               {item.title}
-              {isActive(item) && <span class="absolute bottom-0 left-3 right-3 h-0.5 bg-eno-green dark:bg-eno-green-light rounded-full" />}
+              {!item.external && isActive(item) && <span class="absolute bottom-0 left-3 right-3 h-0.5 bg-eno-green dark:bg-eno-green-light rounded-full" />}
             </a>
           ))
         }
@@ -94,14 +97,18 @@ const activeText = '!text-eno-green dark:!text-eno-green-light'
             <a
               href={item.path}
               data-close-mobile-nav
+              {...(item.external ? { target: '_blank', rel: 'noopener' } : {})}
               class:list={[
                 'flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors min-h-[44px]',
-                isActive(item)
+                !item.external && isActive(item)
                   ? 'text-eno-green-dark dark:text-eno-green-light bg-eno-green/5 dark:bg-pine-light'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-pine-light',
               ]}
             >
               {item.title}
+              {item.external && (
+                <svg class="w-3.5 h-3.5 ml-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              )}
             </a>
           ))
         }
