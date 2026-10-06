@@ -20,7 +20,7 @@ const { eyebrow, title, lead, crumbs, width = '4xl', compact = false } = Astro.p
             <>
               {i > 0 && <span class="text-gray-300 dark:text-gray-600">/</span>}
               {crumb.to ? (
-                <a href={crumb.to} class="hover:text-eno-green dark:hover:text-eno-green-light transition-colors">
+                <a href={crumb.to} class="hover:text-eno-green-dark dark:hover:text-eno-green-light transition-colors">
                   {crumb.label}
                 </a>
               ) : (
@@ -31,7 +31,7 @@ const { eyebrow, title, lead, crumbs, width = '4xl', compact = false } = Astro.p
         </nav>
       )
     }
-    {eyebrow && <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green dark:text-eno-green-light mb-3">{eyebrow}</p>}
+    {eyebrow && <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green-dark dark:text-eno-green-light mb-3">{eyebrow}</p>}
     <h1 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 dark:text-white leading-tight">{title}</h1>
     {lead && <p class="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-2xl leading-relaxed">{lead}</p>}
   </div>

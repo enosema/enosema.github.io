@@ -243,9 +243,12 @@ const detail = computed(() => {
             >{{ e.label }}</text>
             <line
               :x1="edgeGeom(e).x1" :y1="edgeGeom(e).y1" :x2="edgeGeom(e).x2" :y2="edgeGeom(e).y2"
-              stroke="transparent" stroke-width="14" class="cursor-help"
+              stroke="transparent" stroke-width="14"
+              tabindex="0" role="button" :aria-label="e.detail"
               @mouseenter="hoverId = 'e' + i"
               @mouseleave="hoverId = null"
+              @focus="hoverId = 'e' + i"
+              @blur="hoverId = null"
             />
           </g>
 
@@ -293,9 +296,11 @@ const detail = computed(() => {
               :height="nodeSize(n).h"
               rx="9"
               fill="transparent"
-              class="cursor-pointer"
+              tabindex="0" role="button" :aria-label="n.lang ? `${n.lang}: ${n.label}` : n.sub ? `${n.label} — ${n.sub}` : n.label"
               @mouseenter="hoverId = n.id"
               @mouseleave="hoverId = null"
+              @focus="hoverId = n.id"
+              @blur="hoverId = null"
             />
           </g>
         </g>
@@ -318,3 +323,13 @@ const detail = computed(() => {
     </div>
   </div>
 </template>
+
+<style>
+svg [tabindex]:focus-visible {
+  outline: 2px solid var(--color-eno-green);
+  outline-offset: 2px;
+}
+.dark svg [tabindex]:focus-visible {
+  outline-color: var(--color-eno-green-light);
+}
+</style>
