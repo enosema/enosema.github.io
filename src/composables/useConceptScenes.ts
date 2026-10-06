@@ -22,6 +22,7 @@ export interface SceneEdge {
 
 export interface SceneContainer {
   label: string
+  sub?: string
   x: number
   y: number
   w: number
@@ -124,7 +125,7 @@ export const scenes: Scene[] = [
     slogan: 'between systems',
     tab: 'systems',
     filename: 'concept-graph.systems.yaml',
-    hint: 'Map concepts, not terms — harmonizing IEV with the ISO/TC 211 glossary',
+    hint: 'Map concepts, not terms — harmonizing IEV with the ISO/TC 211 MLGT',
     nodes: [
       { id: 'iev-current', label: 'current', sub: 'electric', x: 100, y: 120, kind: 'term' },
       { id: 'iev-em', label: 'electromagnetic', sub: 'wave', x: 100, y: 214, kind: 'term' },
@@ -148,8 +149,8 @@ export const scenes: Scene[] = [
       },
     ],
     containers: [
-      { label: 'IEC Electropedia (IEV)', x: 12, y: 24, w: 176, h: 236 },
-      { label: 'ISO/TC 211 glossary', x: 212, y: 24, w: 176, h: 236 },
+      { label: 'IEC Electropedia', sub: '(IEV)', x: 8, y: 24, w: 184, h: 236 },
+      { label: 'ISO/TC 211', sub: 'Multi-Lingual Glossary of Terms', x: 208, y: 24, w: 184, h: 236 },
     ],
     legend: [
       { type: 'mapping', label: 'same concept, different terms' },

@@ -62,6 +62,10 @@ hr {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+  .js [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes cursor-blink {
@@ -70,9 +74,13 @@ hr {
 }
 
 /* Scroll-reveal, driven by a global IntersectionObserver in BaseLayout */
-[data-animate] {
+/* Hidden only when JS is available (html.js flag); without JS or under
+   reduced motion the content is simply visible. */
+.js [data-animate] {
   opacity: 0;
   transform: translateY(0.5rem);
+}
+[data-animate] {
   transition: opacity 200ms ease-out, transform 200ms ease-out;
 }
 [data-animate].is-visible {
