@@ -2,26 +2,42 @@
 title: Joanna Goodwin
 ---
 
-== Standards identification and terminology
+== Standards production and terminology
 
-Joanna Goodwin spent her career where standards publishing meets terminology
-management, serving international standardization at the ISO Central Secretariat
-and the International Electrotechnical Commission (IEC), from which she has since
-retired.
+Joanna Goodwin spent a 25-year career in international standardization — 15
+years at the ISO Central Secretariat, then a decade at the International
+Electrotechnical Commission (IEC), from which she has since retired.
+
+== Previous roles
+
+* *Terminology Coordinator, IEC (2011–2021)* — oversaw the maintenance,
+  evolution, and harmonization of the IEC's terminology collections and
+  databases, and the mechanisms and processes for terminology development,
+  harmonization, and capture
+* *Manager, Production Services, ISO Central Secretariat (2004–2011)* — managed
+  production services for International Standards (30 staff); drafted and
+  maintained the editorial rules for International Standards, subsequently
+  adopted by several regional and national standards bodies; project leader for
+  production improvement and internal auditor
+* *Assistant Director, Production Management, ISO Central Secretariat
+  (1996–2004)* — managed the production line for International Standards across
+  editing, technical draughting, composition, proofreading, and metadata;
+  reengineered the production process to halve production time and introduced
+  SGML electronic publishing across the development–publication–revision loop
 
 == Contributions to standards
 
-* Author of RFC 5141, _A Uniform Resource Name (URN) Namespace for the International
-  Organization for Standardization (ISO)_ (IETF, 2008), with Holger Apel — the
+* Author of RFC 5141, _A Uniform Resource Name (URN) Namespace for the
+  International Organization for Standardization (ISO)_ (IETF, 2008), with
+  Holger Apel — written during her tenure at the ISO Central Secretariat — the
   specification behind the `urn:iso:std:` identifiers, which give ISO standards,
-  their editions, supplements, languages, and even individual clauses, tables, and
-  terms persistent, location-independent identification on the Internet
-* Editorial Manager at the ISO Central Secretariat when RFC 5141 was written, and
-  named in it as the declared registrant of the ISO URN namespace
-* Former Terminology Coordinator at the IEC, coordinating terminology across the
-  IEC's technical committees
-* Former secretary of IEC/TC 1, Terminology — the committee that maintains the
+  their editions, supplements, languages, and even individual clauses, tables,
+  and terms persistent, location-independent identification on the Internet
+* Declared registrant of the ISO URN namespace, named in RFC 5141
+* Secretary of IEC/TC 1, Terminology — the committee that maintains the
   International Electrotechnical Vocabulary (IEV)
+* Organized the IEC workshop on the revised International System of Units (SI)
+  with IEC/TC 1 chair Luca Mari at the 2019 IEC General Meeting in Shanghai
 
 == At Enosema
 
