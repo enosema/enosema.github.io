@@ -42,14 +42,14 @@ const tiers = [
           <AnimatedSection delay={i * 80}>
             <div class="rounded-xl border border-gray-200/80 dark:border-gray-700/60 bg-white dark:bg-pine-light p-8 h-full flex flex-col transition-all duration-200 hover:border-eno-green/30 dark:hover:border-eno-green/30 hover:-translate-y-0.5 hover:shadow-lg">
               <div class="w-10 h-10 rounded-lg bg-eno-green/8 dark:bg-eno-green/10 flex items-center justify-center mb-5">
-                <svg class="w-5 h-5 text-eno-green dark:text-eno-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={tier.icon} /></svg>
+                <svg class="w-5 h-5 text-eno-green-dark dark:text-eno-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={tier.icon} /></svg>
               </div>
               <h2 class="font-serif font-bold text-xl text-gray-900 dark:text-white">{tier.name}</h2>
-              <p class="font-mono text-xs text-eno-green dark:text-eno-green-light tracking-wide mt-1.5 uppercase">{tier.requirement}</p>
+              <p class="font-mono text-xs text-eno-green-dark dark:text-eno-green-light tracking-wide mt-1.5 uppercase">{tier.requirement}</p>
               <ul class="mt-5 space-y-3 flex-1">
                 {tier.benefits.map((benefit) => (
                   <li class="flex items-start gap-2.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                    <svg class="w-4 h-4 mt-0.5 text-eno-green dark:text-eno-green-light shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <svg class="w-4 h-4 mt-0.5 text-eno-green-dark dark:text-eno-green-light shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                     {benefit}
                   </li>
                 ))}

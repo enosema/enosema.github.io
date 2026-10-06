@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Source for public/og.png (1200x630 social share card). Regenerate with:
+     Chrome --headless=new --screenshot=../public/og.png --window-size=1200,630 --default-background-color=00000000 og-card.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: linear-gradient(160deg, #007724 0%, #0d4c00 100%);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ring { position: absolute; border-radius: 50%; border: solid #ffffff; opacity: 0.08; pointer-events: none; }
+  .ring.r1 { width: 420px; height: 420px; border-width: 44px; top: -140px; right: 140px; filter: blur(2px); }
+  .ring.r2 { width: 360px; height: 360px; border-width: 34px; bottom: -170px; left: 90px; filter: blur(2px); }
+  .lockup { display: flex; align-items: center; gap: 34px; }
+  .lockup img.symbol { height: 128px; width: auto; }
+  .lockup img.wordmark { height: 92px; width: auto; }
+  .url {
+    position: absolute; bottom: 56px; left: 0; right: 0;
+    text-align: center;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 30px; letter-spacing: 0.14em; color: #aced99; opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+  <div class="ring r1"></div>
+  <div class="ring r2"></div>
+  <div class="lockup">
+    <img class="symbol" src="../public/logos/logo-symbol-white.svg" alt="" />
+    <img class="wordmark" src="../public/logos/logo-text-white.svg" alt="Enosema Foundation" />
+  </div>
+  <div class="url">WWW.ENOSEMA.ORG</div>
+</body>
+</html>
