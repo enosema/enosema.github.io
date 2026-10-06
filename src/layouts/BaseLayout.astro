@@ -33,12 +33,13 @@ const canonical = `${siteData.url}${currentPath === '/' ? '/' : currentPath}`
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <script is:inline>
-      // Prevent FOUC for dark mode
+      // Prevent FOUC for dark mode; flag JS availability for scroll-reveal CSS
       ;(function () {
         var t = localStorage.getItem('theme')
         if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark')
         }
+        document.documentElement.classList.add('js')
       })()
     </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -89,6 +90,8 @@ const canonical = `${siteData.url}${currentPath === '/' ? '/' : currentPath}`
         { threshold: 0.1 },
       )
       els.forEach((el) => io.observe(el))
+      // Failsafe: never leave content hidden if the observer never fires
+      setTimeout(() => els.forEach((el) => el.classList.add('is-visible')), 1500)
     </script>
   </body>
 </html>

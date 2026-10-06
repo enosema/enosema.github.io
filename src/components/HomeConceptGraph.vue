@@ -204,10 +204,17 @@ const detail = computed(() => {
             <text
               v-for="c in currentScene.containers"
               :key="c.label + '-label'"
-              :x="c.x + 12" :y="c.y + 20"
+              :x="c.x + 12" :y="c.y + 18"
               class="fill-gray-400 dark:fill-gray-500 font-mono"
               font-size="10"
             >{{ c.label }}</text>
+            <text
+              v-for="c in currentScene.containers.filter((x) => x.sub)"
+              :key="c.label + '-sub'"
+              :x="c.x + 12" :y="c.y + 31"
+              class="fill-gray-400 dark:fill-gray-500 font-mono"
+              font-size="8.5"
+            >{{ c.sub }}</text>
           </g>
 
           <g v-for="(e, i) in currentScene.edges" :key="currentScene.id + '-e' + i" :class="edgeActive(e, i) ? 'opacity-100' : 'opacity-25'" class="transition-opacity duration-200">
