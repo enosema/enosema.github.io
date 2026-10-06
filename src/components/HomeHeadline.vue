@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useConceptPairs } from '@/composables/useConceptPairs'
+import { useConceptScenes } from '@/composables/useConceptScenes'
 
-const { currentPair } = useConceptPairs()
+const { currentScene } = useConceptScenes()
 </script>
 
 <template>
@@ -21,8 +21,8 @@ const { currentPair } = useConceptPairs()
         leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-2"
       >
-        <span :key="currentPair.slogan" class="relative block mt-1 text-eno-green dark:text-eno-green-light">
-          {{ currentPair.slogan }}
+        <span :key="currentScene.slogan" class="relative block mt-1 text-eno-green dark:text-eno-green-light">
+          {{ currentScene.slogan }}
         </span>
       </Transition>
     </h1>

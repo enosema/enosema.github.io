@@ -4,7 +4,7 @@ import AnimatedSection from '@/components/AnimatedSection.astro'
 import BaseButton from '@/components/BaseButton.astro'
 import BaseCard from '@/components/BaseCard.astro'
 import HomeHeadline from '@/components/HomeHeadline.vue'
-import HomeConceptCard from '@/components/HomeConceptCard.vue'
+import HomeConceptGraph from '@/components/HomeConceptGraph.vue'
 import { getList, formatDate } from '@/lib/content'
 
 const posts = getList('posts').slice(0, 3)
@@ -98,9 +98,9 @@ const milestones = [
           </div>
         </div>
 
-        <!-- Concept register card with typewriter -->
-        <div class="flex items-start justify-center w-full lg:w-[440px] shrink-0 mt-8 lg:mt-10">
-          <HomeConceptCard client:load />
+        <!-- Interactive concept graph: relations, multilingualism, cross-system mapping -->
+        <div class="flex items-start justify-center w-full lg:w-[460px] shrink-0 mt-8 lg:mt-10">
+          <HomeConceptGraph client:load />
         </div>
       </div>
     </div>
