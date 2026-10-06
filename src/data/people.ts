@@ -14,8 +14,9 @@ export const people: Person[] = [
     slug: 'reese-plews',
     role: 'President',
     blurb:
-      'Convenes the Terminology Management Group of ISO/TC 211, Geographic information/Geomatics, and coordinates its Multi-Lingual Glossary of Terms. Reese drives Enosema’s standardization agenda for shared concepts.',
+      'CEO of Plews Consulting Co. Ltd. Convenes the Terminology Management Group of ISO/TC 211, Geographic information/Geomatics, and coordinates its Multi-Lingual Glossary of Terms. Reese drives Enosema’s standardization agenda for shared concepts.',
     links: [
+      { label: 'Plews Consulting Co. Ltd.', href: 'https://plewsconsulting.co.jp' },
       { label: 'ISO/TC 211 — Terminology Management Group', href: 'https://committee.iso.org/home/tc211' },
     ],
   },
