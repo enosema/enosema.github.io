@@ -26,7 +26,8 @@ export const people: Person[] = [
     slug: 'joanna-goodwin',
     role: 'Founder',
     blurb:
-      'Previously Terminology Coordinator at the IEC and secretary of IEC/TC 1, Terminology. Joanna brings deep experience in managing international electrotechnical terminology to the Foundation.',
+      'Spent 15 years producing International Standards at the ISO Central Secretariat, then a decade as the IEC’s Terminology Coordinator and secretary of IEC/TC 1, Terminology. Joanna brings deep experience in managing international terminology to the Foundation.',
+    photo: '/images/people/joanna-goodwin.jpg',
     links: [
       { label: 'IEC — International Electrotechnical Commission', href: 'https://www.iec.ch/homepage' },
       { label: 'IEC/TC 1 — Terminology', href: 'https://www.iec.ch/dyn/www/f?p=103:7:0::::FSP_ORG_ID,FSP_LANG_ID:1231,25' },
