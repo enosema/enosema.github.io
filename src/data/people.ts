@@ -4,6 +4,7 @@ export interface Person {
   role: string
   blurb: string
   photo?: string
+  linkedin?: string
   links?: Array<{ label: string; href: string }>
 }
 
@@ -28,6 +29,7 @@ export const people: Person[] = [
     blurb:
       'Spent 15 years producing International Standards at the ISO Central Secretariat, then a decade as the IEC’s Terminology Coordinator and secretary of IEC/TC 1, Terminology. Joanna brings deep experience in managing international terminology to the Foundation.',
     photo: '/images/people/joanna-goodwin.jpg',
+    linkedin: 'https://www.linkedin.com/in/joanna-goodwin-5756244/',
     links: [
       { label: 'IEC — International Electrotechnical Commission', href: 'https://www.iec.ch/homepage' },
       { label: 'IEC/TC 1 — Terminology', href: 'https://www.iec.ch/dyn/www/f?p=103:7:0::::FSP_ORG_ID,FSP_LANG_ID:1231,25' },
@@ -40,6 +42,7 @@ export const people: Person[] = [
     blurb:
       'Convenes Date and time at ISO/TC 154, e-Business, and is the founder of Ribose. Ronald works on open standards and machine-readable, smart standardization of concepts and their models.',
     photo: '/images/people/ronald-tse.jpg',
+    linkedin: 'https://www.linkedin.com/in/rhtse/',
     links: [
       { label: 'ISO/TC 154 — e-Business', href: 'https://www.isotc154.org' },
       { label: 'Ribose', href: 'https://www.ribose.com' },
