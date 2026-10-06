@@ -165,20 +165,22 @@ const detail = computed(() => {
       </Transition>
     </div>
 
-    <div class="flex border-b border-gray-100 dark:border-gray-700/40" role="tablist" aria-label="Concept graph scenes">
-      <button
-        v-for="(s, i) in scenes"
-        :key="s.id"
-        role="tab"
-        :aria-selected="i === sceneIndex"
-        class="flex-1 px-3 py-2 text-xs font-mono tracking-wide transition-colors border-b-2 -mb-px"
-        :class="i === sceneIndex
-          ? 'text-eno-green dark:text-eno-green-light border-eno-green dark:border-eno-green-light bg-eno-green/[0.04] dark:bg-eno-green/10'
-          : 'text-gray-400 dark:text-gray-500 border-transparent hover:text-gray-600 dark:hover:text-gray-300'"
-        @click="setScene(i)"
-      >
-        {{ s.tab }}
-      </button>
+    <div class="px-3 pt-3 pb-2 border-b border-gray-100 dark:border-gray-700/40">
+      <div class="flex gap-1 p-1 rounded-lg bg-gray-100 dark:bg-pine border border-gray-200/60 dark:border-gray-700/40" role="tablist" aria-label="Concept graph scenes">
+        <button
+          v-for="(s, i) in scenes"
+          :key="s.id"
+          role="tab"
+          :aria-selected="i === sceneIndex"
+          class="flex-1 px-3 py-1.5 rounded-md text-xs font-mono tracking-wide transition-all duration-150"
+          :class="i === sceneIndex
+            ? 'bg-white dark:bg-pine-light shadow-sm font-bold text-eno-green-dark dark:text-eno-green-light'
+            : 'text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'"
+          @click="setScene(i)"
+        >
+          {{ s.tab }}
+        </button>
+      </div>
     </div>
 
     <svg viewBox="0 0 400 300" class="block w-full" role="img" :aria-label="`Concept graph: ${currentScene.slogan}`">
