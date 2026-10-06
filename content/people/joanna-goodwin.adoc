@@ -6,7 +6,8 @@ title: Joanna Goodwin
 
 Joanna Goodwin spent a 25-year career in international standardization — 15
 years at the ISO Central Secretariat, then a decade at the International
-Electrotechnical Commission (IEC), from which she has since retired.
+Electrotechnical Commission (IEC), from which she has since retired. She began
+her career in publishing and holds a degree in environmental sciences.
 
 == Previous roles
 
@@ -15,10 +16,11 @@ Electrotechnical Commission (IEC), from which she has since retired.
   databases, and the mechanisms and processes for terminology development,
   harmonization, and capture
 * *Manager, Production Services, ISO Central Secretariat (2004–2011)* — managed
-  production services for International Standards (30 staff); drafted and
-  maintained the editorial rules for International Standards, subsequently
-  adopted by several regional and national standards bodies; project leader for
-  production improvement and internal auditor
+  production services for International Standards (30 staff); responsible for
+  ISO's drafting rules (ISO/IEC Directives, Part 2) and the ISO standards
+  authoring templates, rules subsequently adopted by several regional and
+  national standards bodies; project leader for production improvement and
+  internal auditor
 * *Assistant Director, Production Management, ISO Central Secretariat
   (1996–2004)* — managed the production line for International Standards across
   editing, technical draughting, composition, proofreading, and metadata;
@@ -33,6 +35,10 @@ Electrotechnical Commission (IEC), from which she has since retired.
   specification behind the `urn:iso:std:` identifiers, which give ISO standards,
   their editions, supplements, languages, and even individual clauses, tables,
   and terms persistent, location-independent identification on the Internet
+* Author of _The ITSIG/XML authoring and metadata project_ (ISO Focus,
+  November 2008, with Sebastian Rahtz of the Text Encoding Initiative) on
+  capturing International Standards content as structured XML for intelligent
+  reuse and delivery
 * Declared registrant of the ISO URN namespace, named in RFC 5141
 * Secretary of IEC/TC 1, Terminology — the committee that maintains the
   International Electrotechnical Vocabulary (IEV)
