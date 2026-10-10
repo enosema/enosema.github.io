@@ -54,18 +54,6 @@ jobs:
         mkdir -p "$GITHUB_WORKSPACE/dist/standards"
         cp -r dist/* "$GITHUB_WORKSPACE/dist/standards/"
 
-        # Site-root convenience redirects into the /standards mount:
-        # /docs/** and the data endpoints 301-equivalents (meta refresh)
-        cd "$GITHUB_WORKSPACE/dist"
-        stub() {
-          local target="$1" dest="$2"
-          mkdir -p "$(dirname "$dest")"
-          printf '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>%s</title><link rel="canonical" href="%s"><meta http-equiv="refresh" content="0; url=%s"></head><body><p>Moved to <a href="%s">%s</a>.</p></body></html>\n' "$target" "$target" "$target" "$target" "$target" > "$dest"
-        }
-        find standards/docs -name '*.html' | while read -r f; do
-          rel="${f#standards/}"
-          stub "/standards/$rel" "$rel"
-        done
         for ep in catalog.json catalog.json.sha256 search-index.json feed.xml opensearch.xml sitemap.xml; do
           [ -f "standards/$ep" ] && stub "/standards/$ep" "$ep"
         done

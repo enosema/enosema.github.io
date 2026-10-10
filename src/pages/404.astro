@@ -15,4 +15,13 @@ import BaseButton from '@/components/BaseButton.astro'
       <BaseButton to="/blog" variant="secondary" size="md">Read the blog</BaseButton>
     </div>
   </div>
+  <script is:inline>
+    // Path-mounted registry: unprefixed registry URLs (/docs/**, the data
+    // endpoints) live under /standards/ — redirect instead of 404-ing.
+    (function () {
+      if (location.pathname.startsWith('/standards/')) return;
+      var m = location.pathname.match(/^\/(docs|catalog\.json|catalog\.json\.sha256|search-index\.json|feed\.xml|opensearch\.xml|sitemap\.xml)(\/|$)/);
+      if (m) location.replace('/standards' + location.pathname + location.search + location.hash);
+    })();
+  </script>
 </BaseLayout>
