@@ -51,6 +51,7 @@ jobs:
         npm ci
         bundle install --jobs 4
         bundle exec rake build
+        mkdir -p "$GITHUB_WORKSPACE/dist/standards"
         cp -r dist/* "$GITHUB_WORKSPACE/dist/standards/"
 
     - name: Upload artifact
