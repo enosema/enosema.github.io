@@ -54,10 +54,6 @@ jobs:
         mkdir -p "$GITHUB_WORKSPACE/dist/standards"
         cp -r dist/* "$GITHUB_WORKSPACE/dist/standards/"
 
-        for ep in catalog.json catalog.json.sha256 search-index.json feed.xml opensearch.xml sitemap.xml; do
-          [ -f "standards/$ep" ] && stub "/standards/$ep" "$ep"
-        done
-
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v5
       with:
