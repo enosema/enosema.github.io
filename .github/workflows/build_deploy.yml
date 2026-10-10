@@ -38,6 +38,17 @@ jobs:
         npm ci
         npm run build
 
+    - name: Build standards registry (mounted at /standards)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git clone -q --depth 1 https://github.com/enosema/standards.git /tmp/standards
+        cd /tmp/standards
+        npm ci
+        bundle install --jobs 4
+        bundle exec rake build
+        cp -r dist/* "$GITHUB_WORKSPACE/dist/standards/"
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v5
       with:
