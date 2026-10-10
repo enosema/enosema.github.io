@@ -38,6 +38,10 @@ jobs:
         npm ci
         npm run build
 
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4'
+
     - name: Build standards registry (mounted at /standards)
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
