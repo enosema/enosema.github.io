@@ -21,7 +21,7 @@ import BaseButton from '@/components/BaseButton.astro'
     (function () {
       if (location.pathname.startsWith('/standards/')) return;
       var m = location.pathname.match(/^\/(docs|catalog\.json|catalog\.json\.sha256|search-index\.json|feed\.xml|opensearch\.xml|sitemap\.xml)(\/|$)/);
-      if (m) location.replace('/standards' + location.pathname + location.search + location.hash);
+      if (m) location.replace('https://www.enosema.org/standards' + location.pathname + location.search + location.hash);
     })();
   </script>
 </BaseLayout>
