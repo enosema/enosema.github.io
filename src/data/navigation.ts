@@ -9,7 +9,7 @@ export const mainNavigation: NavItem[] = [
   { title: 'About', path: '/about' },
   { title: 'Blog', path: '/blog' },
   { title: 'Membership', path: '/membership' },
-  { title: 'Standards', path: '/docs' },
+  { title: 'Standards', path: '/standards' },
   { title: 'References', path: '/references' },
   { title: 'FERIN', path: 'https://www.ferin.org', external: true },
 ]
