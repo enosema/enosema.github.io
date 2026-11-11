@@ -122,9 +122,9 @@ https://github.com/ISO-TC211/TMG.
 
 
 |
-image::https://eng.sdfe.dk/media/2917336/sdfe_cmyk_uk.png[SDFE logo,181,74]
+image::https://web.archive.org/web/20211231010550im_/https://sdfe.dk/media/6619/log_sde_rgb_dk.png[SDFE logo,190,74]
 |
-The https://eng.sdfe.dk/[Danish Agency for Data Supply and
+The https://web.archive.org/web/20211231010550/https://sdfe.dk/[Danish Agency for Data Supply and
 Efficiency] is tasked with ensuring the presence of a sound
 foundation of data underpinning decisions and major transitions in
 society. In the past, this entailed updating the topographical maps,
