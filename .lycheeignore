@@ -4,6 +4,8 @@ https://www.linkedin.com*
 .*@.*example.com
 (ht|f)tps?://.*\.?example\.(com|org).*
 /docs
+# /standards is built and verified by the enosema/standards pipeline, not this build
+/standards
 
 # Bot-blocked: these sites reject automated clients (403) but work in browsers
 https://www.iso.org*
