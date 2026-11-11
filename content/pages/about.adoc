@@ -64,7 +64,15 @@ Enosema is composed of the following internal bodies and roles:
 ** Vice-President
 ** Chief Financial Officer
 
+* Technical Coordination Board (TCB)
+** appointed by the Board of Directors; develops, maintains, and executes the
+ES standardization and publication processes defined in the ES Directives
+
 * Technical Committee
+
+The procedures used to develop Enosema documents, and those intended for their
+further maintenance, are defined in the ES Directives, published in the
+https://www.enosema.org/standards/directives/[Enosema Standards Registry].
 
 
 == Technical work
@@ -79,6 +87,25 @@ is spread across the globe.
 
 Enosema consists of international experts and will work with international
 partners.
+
+
+== Sustainable Development Goals
+
+Enosema contributes to the United Nations Sustainable Development Goals by
+providing open standards for concepts, terminology, and their management:
+
+* link:https://sdgs.un.org/goals/goal9[SDG 9 — Industry, Innovation and
+Infrastructure]: shared concept and terminology standards are common
+infrastructure on which information systems and industries build;
+
+* link:https://sdgs.un.org/goals/goal10[SDG 10 — Reduced Inequalities]:
+multilingual terminology management and culturally aware concept modeling
+reduce language barriers and make knowledge accessible across languages and
+cultures;
+
+* link:https://sdgs.un.org/goals/goal17[SDG 17 — Partnerships for the Goals]:
+Enosema works with international partners and standardization bodies to align
+terminology practice worldwide.
 
 
 == Founders
