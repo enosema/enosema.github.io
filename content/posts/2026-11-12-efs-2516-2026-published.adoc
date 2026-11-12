@@ -1,0 +1,28 @@
+---
+layout: post
+title: "The Enosema Foundation has published EFS 2516:2026, Terminology management — Machine-readable terminology interchange"
+date: 2026-11-12
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published EFS 2516:2026, Terminology management —
+  Machine-readable terminology interchange, on 12 November 2026, through the
+  Enosema Standards Registry.
+---
+
+= The Enosema Foundation has published EFS 2516:2026, Terminology management — Machine-readable terminology interchange
+
+Systems that manage concepts store them in formats of their own, and the value of a concept collection grows with the ease of moving it between systems, because interchange is what turns isolated collections into shared infrastructure.
+
+The Enosema Foundation has published EFS 2516:2026, _Terminology management — Machine-readable terminology interchange_, on 12 November 2026. This document specifies the machine-readable interchange of concepts, concept systems, and concept relations between terminology management systems and registers. It specifies the concept record format for managed concepts and localized concepts, together with dataset identity, register metadata, and dataset packaging, and it defines the SKOS projection profile with its permitted losses, bulk export requirements, and a publication profile for browsable register sites.
+
+This document does not specify the semantics of concept relations, which are specified in EFS 2510, or terminology authoring methods, which are specified in ISO 704. It applies to any system that produces, exchanges, or publishes concept data of the Foundation, and to any organization that adopts the concept management system requirements of EFS 2513.
+
+The publication is accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].
