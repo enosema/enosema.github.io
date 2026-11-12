@@ -1,0 +1,159 @@
+---
+// The name equation: Greek ἔννοια + Latin semantica → enosema.
+// Set on a permanent pine band — the one deliberately dark moment on the page.
+const letters = [
+  { ch: 'e', part: 'en' },
+  { ch: 'n', part: 'en' },
+  { ch: 'o', part: 'join' },
+  { ch: 's', part: 'sema' },
+  { ch: 'e', part: 'sema' },
+  { ch: 'm', part: 'sema' },
+  { ch: 'a', part: 'sema' },
+]
+---
+
+<section class="etymology" aria-labelledby="etymology-heading" data-animate>
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <p class="font-mono text-xs tracking-[0.2em] uppercase text-eno-green-light mb-10 sm:mb-12" id="etymology-heading">Our name</p>
+
+    <div class="entries">
+      <div class="entry" lang="grc">
+        <p class="headword">ἔννοια</p>
+        <p class="meta">Greek &middot; <span class="translit">ennoia</span> &middot; &ldquo;concept&rdquo;</p>
+      </div>
+      <p class="joiner" aria-hidden="true">+</p>
+      <div class="entry" lang="la">
+        <p class="headword headword-latin">semantica</p>
+        <p class="meta">Latin &middot; &ldquo;semantics&rdquo;</p>
+      </div>
+    </div>
+
+    <p class="fusion" translate="no" aria-label="enosema — en from ennoia, sema from semantica">
+      {letters.map((l, i) => (
+        <span class={`letter letter-${l.part}`} style={`transition-delay:${150 + i * 70}ms`}>{l.ch}</span>
+      ))}
+    </p>
+    <p class="fusion-key font-mono">
+      <span class="key-en">en</span> from ἔννοια &nbsp;&middot;&nbsp; <span class="key-sema">sema</span> from semantica
+    </p>
+
+    <p class="lyric">
+      Enosema is a name built the way understanding is built. It weds ἔννοια —
+      <em>ennoia</em>, the Greek word for concept — to <em>semantica</em>, the Latin
+      word for semantics: the opening of the one carrying the heart of the other,
+      two classical languages meeting in a single modern word. Look closely and you
+      can still see the seam where they joined — and that seam is the work: concepts
+      made to carry their meaning across languages, across domains, across time.
+    </p>
+  </div>
+</section>
+
+<style>
+  .etymology {
+    background: var(--color-pine);
+    border-top: 1px solid rgb(255 255 255 / 0.06);
+    border-bottom: 1px solid rgb(255 255 255 / 0.06);
+    color: #fff;
+  }
+  .entries {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .joiner { display: none; }
+  .headword {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    line-height: 1.05;
+    color: #fff;
+  }
+  .fusion {
+    margin-top: 2.75rem;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  @media (min-width: 640px) {
+    .entries {
+      flex-direction: row;
+      gap: 2.5rem;
+    }
+    .joiner {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      color: rgb(255 255 255 / 0.35);
+      align-self: center;
+    }
+    .fusion {
+      margin-top: 3rem;
+      font-size: clamp(3.4rem, 12vw, 6.5rem);
+    }
+  }
+  .headword-latin {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: rgb(172 237 153 / 0.85);
+  }
+  .translit { color: rgb(255 255 255 / 0.65); }
+  .letter {
+    display: inline-block;
+    opacity: 1;
+    transform: none;
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+  }
+  .letter-en { color: var(--color-eno-green-light); }
+  .letter-join { color: rgb(255 255 255 / 0.55); }
+  .letter-sema { color: var(--color-eno-green); }
+  /* with JS: hold letters back until the band scrolls into view, then stagger in */
+  :global(html.js) .etymology:not(.is-visible) .letter {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+  :global(html.js) .etymology.is-visible .letter {
+    opacity: 1;
+    transform: none;
+  }
+  .fusion-key {
+    margin-top: 1.1rem;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: rgb(255 255 255 / 0.6);
+  }
+  .fusion-key .key-en { color: var(--color-eno-green-light); }
+  .fusion-key .key-sema { color: var(--color-eno-green); }
+  .lyric {
+    margin: 2.75rem auto 0;
+    max-width: 42rem;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgb(244 250 241 / 0.88);
+  }
+  .lyric em {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.12em;
+    color: #fff;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .letter { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+</style>
