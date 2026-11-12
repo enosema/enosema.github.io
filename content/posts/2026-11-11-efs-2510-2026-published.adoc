@@ -1,0 +1,26 @@
+---
+layout: post
+title: "The Enosema Foundation has published EFS 2510:2026, Concept systems and concept relations"
+date: 2026-11-11
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published EFS 2510:2026, Concept systems and
+  concept relations, on 11 November 2026, through the Enosema Standards
+  Registry.
+---
+
+= The Enosema Foundation has published EFS 2510:2026, Concept systems and concept relations
+
+Domains that organize their knowledge into concept systems can share that knowledge only when the structure of the systems and the relations within them are stated with the same precision in every domain, because an unstated relation is a relation that each reader supplies differently.
+
+The Enosema Foundation has published EFS 2510:2026, _Concept systems and concept relations_, on 11 November 2026. This document specifies the concept systems and concept relations used in terminology management, for the purposes of the Foundation and of any organization that adopts the document. It specifies the structure of concept systems, including concept coordination of the generic, partitive, and instantial kinds, criteria of subdivision, and multidimensionality, together with a controlled vocabulary of concept relations that enumerates each relation type with its semantics, direction, and inverse, and the rules for choosing between binary relations and n-ary relations.
+
+The publication is accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].

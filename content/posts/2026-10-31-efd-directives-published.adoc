@@ -1,0 +1,28 @@
+---
+layout: post
+title: "The Enosema Foundation has published the five Enosema Directives"
+date: 2026-10-31
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published the five Enosema Directives, numbered
+  EFD 101 to EFD 105, on 31 October 2026, through the Enosema Standards
+  Registry.
+---
+
+= The Enosema Foundation has published the five Enosema Directives
+
+A standards organization earns the trust of its adopters by conducting its work under published and stable rules, because rules that are inaccessible cannot be examined and rules that cannot be examined cannot be relied upon.
+
+The Enosema Foundation has published the five Enosema Directives, numbered EFD 101 to EFD 105, on 31 October 2026. The directives govern the standardization work of the Foundation from the first proposal of a document to the rights that attach to its published form.
+
+EFD 101:2026, _Enosema Directive: Standardization and publication_, formalizes the standardization and publication processes of the Foundation, and describes the processes and requirements for every document type that the Foundation produces. EFD 102:2026, _Enosema Directive: Standard document requirements_, provides requirements on the document structure of directives, standards, guides, and specifications. EFD 103:2026, _Enosema Directive: Patent policy_, provides the patent policy that governs all standardization deliverables developed through the standardization process, and follows the ISO patent policy in content, with the designation of the Foundation substituted for that of ISO. EFD 104:2026, _Enosema Directive: Guidelines for the implementation of the Enosema patent policy_, provides guidelines on the application of the patent policy within the standardization and publication processes and the document requirements, and does not cover the implementation of requirements in standards which involve intellectual property rights. EFD 105:2026, _Enosema Directive: Intellectual property rights policy_, provides the intellectual property rights policy that governs all standardization activities of the Foundation.
+
+The publications are accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].
