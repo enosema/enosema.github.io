@@ -1,0 +1,25 @@
+---
+layout: post
+title: "The Enosema Foundation has published EFS 2507:2025, Terminology management — Concept relationships"
+date: 2025-05-03
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published EFS 2507:2025, Terminology management —
+  Concept relationships, on 3 May 2025, through the Enosema Standards Registry.
+---
+
+= The Enosema Foundation has published EFS 2507:2025, Terminology management — Concept relationships
+
+A concept carries its meaning partly through the relations that connect it to other concepts, and systems that record those relations in different forms cannot exchange knowledge without loss, because each form encodes a different understanding of the same structure.
+
+The Enosema Foundation has published EFS 2507:2025, _Terminology management — Concept relationships_, on 3 May 2025. This document specifies an abstract model for defining, documenting, and managing concept relationships in terminology resources and knowledge organization systems. It provides a generic mechanism for concept relationships that can be implemented across different standards, frameworks, and applications, and the abstract model applies to concept relationships in all subject fields, domains, and disciplines.
+
+The publication is accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].

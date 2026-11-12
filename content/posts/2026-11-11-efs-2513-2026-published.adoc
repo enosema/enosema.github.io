@@ -1,0 +1,26 @@
+---
+layout: post
+title: "The Enosema Foundation has published EFS 2513:2026, Concept management systems — Requirements"
+date: 2026-11-11
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published EFS 2513:2026, Concept management
+  systems — Requirements, on 11 November 2026, through the Enosema Standards
+  Registry.
+---
+
+= The Enosema Foundation has published EFS 2513:2026, Concept management systems — Requirements
+
+An organization that is responsible for concepts requires more than principles and models: it requires a system of governance, processes, and records through which those principles are applied, and it requires that the requirements for such a system be stated so that conformity can be demonstrated.
+
+The Enosema Foundation has published EFS 2513:2026, _Concept management systems — Requirements_, on 11 November 2026. This document specifies requirements for a concept management system, which is the governance, the processes, and the records by which an organization manages the concepts for which it is responsible. It is applicable to any organization that creates, maintains, publishes, or registers concepts, regardless of sector, size, or domain, to concept registers operated under ISO 19135 procedures and under the Framework for Extensible Registration of Information (FERIN), and to terminology collections maintained as concept systems in the sense of ISO 704 and EFS 2501. The document is adoptable by any organization, and conformity can be claimed for the requirements classes of its annexes as well as for the document as a whole.
+
+The publication is accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].

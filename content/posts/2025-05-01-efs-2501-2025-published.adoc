@@ -1,0 +1,25 @@
+---
+layout: post
+title: "The Enosema Foundation has published EFS 2501:2025, Terminology management — Principles and methods"
+date: 2025-05-01
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published EFS 2501:2025, Terminology management —
+  Principles and methods, on 1 May 2025, through the Enosema Standards Registry.
+---
+
+= The Enosema Foundation has published EFS 2501:2025, Terminology management — Principles and methods
+
+Organizations that manage terminology across domains and across systems require a common method for the creation, the maintenance, and the dissemination of their terminology resources, because terminology that is managed without a standardized method drifts apart precisely where systems need it to agree.
+
+The Enosema Foundation has published EFS 2501:2025, _Terminology management — Principles and methods_, on 1 May 2025. This document specifies principles, methods, and best practices for terminology management across organizations and domains. It provides a standardized approach to the creation, collection, storage, processing, and dissemination of terminology resources, and its guidelines are applicable to all terminology management activities, regardless of subject field, industry, or organization size.
+
+The publication is accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].

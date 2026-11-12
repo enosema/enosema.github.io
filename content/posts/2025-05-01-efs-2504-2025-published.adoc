@@ -1,0 +1,26 @@
+---
+layout: post
+title: "The Enosema Foundation has published EFS 2504:2025, Terminology management — Multilingual terminology"
+date: 2025-05-01
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has published EFS 2504:2025, Terminology management —
+  Multilingual terminology, on 1 May 2025, through the Enosema Standards
+  Registry.
+---
+
+= The Enosema Foundation has published EFS 2504:2025, Terminology management — Multilingual terminology
+
+Communities that work in different languages depend on terminology collections in which a concept carries the same meaning under each of its designations, because a terminology resource that is consistent within one language but unaligned across languages undermines the very exchange that multilingual work performs.
+
+The Enosema Foundation has published EFS 2504:2025, _Terminology management — Multilingual terminology_, on 1 May 2025. This document specifies principles, methods, and best practices for multilingual terminology management across organizations and domains. It provides a standardized approach to the creation, collection, storage, processing, and dissemination of terminology resources in multiple languages and across different cultural contexts, and its guidelines are applicable to all multilingual terminology management activities, regardless of subject field, industry, organization size, or the languages involved.
+
+The publication is accessible, without charge and without registration, through the https://www.enosema.org/standards/[Enosema Standards Registry].
