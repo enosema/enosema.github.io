@@ -1,0 +1,30 @@
+---
+layout: post
+title: "The Enosema Foundation has assumed the hosting of the Geolexica framework"
+date: 2026-11-12
+categories: announcements
+authors:
+  -
+    name: Reese Plews
+    email: reese.plews@enosema.org
+  -
+    name: Ronald Tse
+    email: ronald.tse@enosema.org
+
+excerpt: >-
+  The Enosema Foundation has assumed the hosting of the Geolexica framework,
+  which Ribose developed and has operated since November 2018 for the ISO/TC 211
+  Multilingual Glossary of Terms and other glossaries.
+---
+
+= The Enosema Foundation has assumed the hosting of the Geolexica framework
+
+Multilingual glossaries serve their communities only while they remain accessible, and the registers that host them require long-term stewardship, because terminology that loses its home also loses its audience.
+
+The Geolexica framework was developed by Ribose and has been operated by Ribose since November 2018. The framework hosts the ISO/TC 211 Multilingual Glossary of Terms (MLGT) at isotc211.geolexica.org, the OSGeo glossary at osgeo.geolexica.org, and the ISO/TC 204 glossary at isotc204.geolexica.org, together with the landing site at geolexica.org, and it serves each glossary as browsable concept registers with per-concept pages, citations, and machine-readable exports.
+
+The Enosema Foundation has assumed the hosting of the Geolexica framework and of its sites, so that the glossaries that Ribose built and maintained for the international community receive appropriate management and safekeeping and reach a wider audience. Ribose co-organized the Shared Concepts Workshop from which the Foundation emerged, and the two organizations continue their collaboration.
+
+Glossarist, the platform on which the Geolexica sites run, remains a Ribose product, and Ribose continues its support for ISO/TC 211 and for the Foundation.
+
+The glossaries remain accessible at their existing addresses, and the Foundation thanks Ribose for seven years of continuous development and stewardship of the framework.
