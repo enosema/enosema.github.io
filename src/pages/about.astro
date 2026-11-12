@@ -3,31 +3,67 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import PageHero from '@/components/PageHero.astro'
 import AnimatedSection from '@/components/AnimatedSection.astro'
 import AsciiDocContent from '@/components/AsciiDocContent.astro'
+import EtymologySection from '@/components/EtymologySection.astro'
 import PersonCard from '@/components/PersonCard.astro'
 import { getContent } from '@/lib/content'
 import { people } from '@/data/people'
 
 const content = getContent('pages', 'about')
 const title = content?.title || 'About'
+
+const sections = content
+  ? [...content.body.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map((m) => ({
+      id: m[1],
+      text: m[2].replace(/<[^>]+>/g, '').trim(),
+    }))
+  : []
 ---
 
 <BaseLayout title={title} description="The Enosema Foundation facilitates the mutual understanding of entities by providing insight and clarity to concepts.">
   <PageHero eyebrow="About" title={title} crumbs={[{ label: 'Home', to: '/' }, { label: 'About' }]} width="3xl" compact />
 
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-    {
-      content ? (
-        <AsciiDocContent html={content.body} />
-      ) : (
-        <div class="text-center py-20 text-gray-400">
-          <p class="font-mono text-sm">Content not available yet.</p>
-        </div>
-      )
-    }
+  <EtymologySection />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-12">
+    <div class="lg:grid lg:grid-cols-[210px_minmax(0,1fr)] lg:gap-10">
+      {
+        sections.length > 0 && (
+          <nav aria-label="On this page" class="hidden lg:block">
+            <div class="sticky top-24">
+              <p class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-4">On this page</p>
+              <ul class="space-y-1 border-l border-gray-200 dark:border-gray-800">
+                {sections.map((s) => (
+                  <li>
+                    <a
+                      href={`#${s.id}`}
+                      data-toc-link
+                      class="toc-link block pl-4 -ml-px py-1.5 text-[0.8rem] leading-snug text-gray-500 dark:text-gray-400 border-l border-transparent hover:text-eno-green-dark dark:hover:text-eno-green-light transition-colors"
+                    >
+                      {s.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+        )
+      }
+      <div id="about-content" class="max-w-3xl min-w-0">
+        {
+          content ? (
+            <AsciiDocContent html={content.body} />
+          ) : (
+            <div class="text-center py-20 text-gray-400">
+              <p class="font-mono text-sm">Content not available yet.</p>
+            </div>
+          )
+        }
+      </div>
+    </div>
   </div>
 
   <!-- Founders profiles -->
-  <section id="founders" class="bg-gray-50 dark:bg-pine-light/30 border-t border-gray-200/60 dark:border-gray-800/60 py-20">
+  <section id="founders-profiles" class="bg-gray-50 dark:bg-pine-light/30 border-t border-gray-200/60 dark:border-gray-800/60 py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <AnimatedSection>
         <div class="text-center mb-12">
@@ -52,3 +88,32 @@ const title = content?.title || 'About'
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .toc-link.is-active {
+    color: var(--color-eno-green-dark);
+    border-color: var(--color-eno-green);
+  }
+  :global(.dark) .toc-link.is-active {
+    color: var(--color-eno-green-light);
+  }
+</style>
+
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]')
+  const headings = document.querySelectorAll<HTMLHeadingElement>('#about-content h2[id]')
+  if (links.length && headings.length) {
+    const setActive = (id: string) => {
+      links.forEach((l) => l.classList.toggle('is-active', l.hash === `#${id}`))
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        }
+      },
+      { rootMargin: '-15% 0px -70% 0px' },
+    )
+    headings.forEach((h) => observer.observe(h))
+  }
+</script>
